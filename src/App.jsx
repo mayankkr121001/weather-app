@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
-import { getName } from 'country-list'
 
 import CurrentWeather from "./components/CurrentWeather"
 import AirConditions from "./components/AirConditions"
@@ -142,7 +141,7 @@ function App() {
 
   async function onSearchClick() {
 
-    await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_NEW_WEATHER_API_KEY}&q=${searchCity}&days=1&aqi=no&alerts=no`)
+    await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_NEW_WEATHER_API_KEY}&q=${searchCity}&days=1&aqi=no&alerts=no`)
       .then((response) => {
         // console.log(response);
       
@@ -163,7 +162,7 @@ function App() {
         console.log(error);
       })
 
-    await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_NEW_WEATHER_API_KEY}&q=${city}&days=5&aqi=no&alerts=no`)
+    await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_NEW_WEATHER_API_KEY}&q=${city}&days=5&aqi=no&alerts=no`)
       .then((response) => {
         // console.log(response);
         let minMaxArray = [];
